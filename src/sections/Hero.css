@@ -253,6 +253,7 @@
   .hero__content {
     grid-template-columns: 1fr;
     text-align: center;
+    padding-top: 50px;
   }
 
   .hero__subtitle {
