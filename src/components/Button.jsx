@@ -13,7 +13,7 @@ export default function Button({
 
   if (href) {
     return (
-      <a href={href} className={classes} aria-label={ariaLabel}>
+      <a href={href} className={classes} onClick={onClick} aria-label={ariaLabel}>
         <span className="btn__ripple" />
         {children}
       </a>
