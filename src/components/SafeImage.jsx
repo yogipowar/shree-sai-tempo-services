@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { IMAGES } from '../data/images';
 
-const FALLBACK = '/images/hero-tempo.jpg';
+const FALLBACK = IMAGES.fallback;
 
 export default function SafeImage({ src, fallback = FALLBACK, alt, className, loading }) {
   const [currentSrc, setCurrentSrc] = useState(src);

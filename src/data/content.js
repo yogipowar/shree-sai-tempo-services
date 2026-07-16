@@ -1,3 +1,5 @@
+import { assetUrl } from '../utils/assetUrl';
+
 export const NAV_LINKS = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
@@ -91,31 +93,31 @@ export const FLEET = [
     name: 'Mini Tempo',
     capacity: '500 kg',
     bestFor: 'Small parcels, local deliveries',
-    image: '/images/fleet-tata-ace.jpg',
+    image: assetUrl('images/fleet-tata-ace.jpg'),
   },
   {
     name: 'Pickup Truck',
     capacity: '1 Ton',
     bestFor: 'Furniture, home shifting',
-    image: '/images/fleet-bolero.jpg',
+    image: assetUrl('images/fleet-bolero.jpg'),
   },
   {
     name: 'Tata Ace',
     capacity: '750 kg',
     bestFor: 'Commercial goods, parcels',
-    image: '/images/fleet-tata-ace.jpg',
+    image: assetUrl('images/fleet-tata-ace.jpg'),
   },
   {
     name: 'Mahindra Jeeto',
     capacity: '600 kg',
     bestFor: 'Urban deliveries, small loads',
-    image: '/images/why-us-tempo.jpg',
+    image: assetUrl('images/why-us-tempo.jpg'),
   },
   {
     name: 'Large Tempo',
     capacity: '2 Ton',
     bestFor: 'Industrial goods, bulk transport',
-    image: '/images/fleet-tata-407.jpg',
+    image: assetUrl('images/fleet-tata-407.jpg'),
   },
 ];
 

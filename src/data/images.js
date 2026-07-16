@@ -1,17 +1,19 @@
+import { assetUrl } from '../utils/assetUrl';
+
 export const IMAGES = {
-  logo: '/logo.png',
-  hero: '/images/hero-tempo.jpg',
-  about: '/images/about-truck.jpg',
-  whyUs: '/images/why-us-tempo.jpg',
-  puneSkyline: '/images/hero-tempo.jpg',
+  logo: assetUrl('logo.png'),
+  hero: assetUrl('images/hero-tempo.jpg'),
+  about: assetUrl('images/about-truck.jpg'),
+  whyUs: assetUrl('images/why-us-tempo.jpg'),
+  puneSkyline: assetUrl('images/hero-tempo.jpg'),
   fleet: {
-    miniTempo: '/images/fleet-tata-ace.jpg',
-    pickup: '/images/fleet-bolero.jpg',
-    tataAce: '/images/fleet-tata-ace.jpg',
-    mahindraJeeto: '/images/why-us-tempo.jpg',
-    largeTempo: '/images/fleet-tata-407.jpg',
+    miniTempo: assetUrl('images/fleet-tata-ace.jpg'),
+    pickup: assetUrl('images/fleet-bolero.jpg'),
+    tataAce: assetUrl('images/fleet-tata-ace.jpg'),
+    mahindraJeeto: assetUrl('images/why-us-tempo.jpg'),
+    largeTempo: assetUrl('images/fleet-tata-407.jpg'),
   },
-  fallback: '/images/hero-tempo.jpg',
+  fallback: assetUrl('images/hero-tempo.jpg'),
 };
 
 export function getAvatarUrl(name) {
