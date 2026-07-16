@@ -6,7 +6,6 @@
   z-index: 1000;
   height: var(--nav-height);
   transition: background var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
-  width: 95%;
 }
 
 .navbar--scrolled {
@@ -161,5 +160,11 @@
 
   .navbar__links a {
     font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 95%;
   }
 }
