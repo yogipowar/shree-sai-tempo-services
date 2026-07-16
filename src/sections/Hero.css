@@ -148,6 +148,7 @@
 
 .hero__visual {
   position: relative;
+  overflow: hidden;
 }
 
 .hero__image-wrapper {
@@ -276,16 +277,29 @@
 
   .hero__stat-card {
     left: auto;
-    right: 20px;
+    right: 1rem;
+    bottom: 1rem;
   }
-  .hero__float-icon--1 { top: 10%; left: 0%; animation-delay: 0s; }
-  .hero__float-icon--2 { top: 30%; right: 0%; animation-delay: 0.5s; }
-  .hero__float-icon--3 { bottom: 30%; left: 0%; animation-delay: 1s; }
-  .hero__float-icon--2 { top: 30%; right: 0%; animation-delay: 0.5s; }
+
+  .hero__float-icon--1 { top: 8%; left: 4%; }
+  .hero__float-icon--2 { top: 28%; right: 4%; }
+  .hero__float-icon--3 { bottom: 28%; left: 4%; }
+  .hero__float-icon--4 { bottom: 8%; right: 4%; }
 }
 
 @media (max-width: 480px) {
   .hero__trust {
     grid-template-columns: 1fr;
+  }
+
+  .hero__float-icon {
+    display: none;
+  }
+
+  .hero__stat-card {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 1rem;
   }
 }

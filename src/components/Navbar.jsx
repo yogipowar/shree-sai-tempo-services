@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { NAV_LINKS } from '../data/content';
 import { IMAGES } from '../data/images';
 import { useNavbarScroll } from '../hooks/useScrollAnimation';
@@ -8,6 +8,26 @@ import './Navbar.css';
 export default function Navbar() {
   const scrolled = useNavbarScroll();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.width = '100%';
+
+    return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      window.scrollTo(0, scrollY);
+    };
+  }, [menuOpen]);
 
   const closeMenu = () => setMenuOpen(false);
 

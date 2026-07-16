@@ -3,9 +3,13 @@
   top: 0;
   left: 0;
   right: 0;
+  width: 100%;
+  max-width: 100%;
   z-index: 1000;
   height: var(--nav-height);
   transition: background var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .navbar--scrolled {
@@ -160,11 +164,5 @@
 
   .navbar__links a {
     font-size: 1.125rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    width: 95%;
   }
 }
