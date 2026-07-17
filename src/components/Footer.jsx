@@ -1,4 +1,4 @@
-import { NAV_LINKS, SERVICES, CONTACT_INFO } from '../data/content';
+import { NAV_LINKS, SERVICES, CONTACT_INFO, telHref } from '../data/content';
 import { IMAGES } from '../data/images';
 import './Footer.css';
 
@@ -15,7 +15,7 @@ export default function Footer() {
             </a>
             <p className="footer__tagline">Delivering Trust, On Time.</p>
             <p className="footer__desc">
-              Trusted tempo and logistics services in Pune. Fast, reliable, and affordable transportation for all your needs.
+              Trusted tempo and logistics services pan-India. Fast, reliable, and affordable transportation for all your needs.
             </p>
             <div className="footer__social">
               <a href="#" aria-label="Facebook">f</a>
@@ -59,18 +59,22 @@ export default function Footer() {
             <ul className="footer__contact">
               <li>{CONTACT_INFO.address}</li>
               <li>
-                <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`}>{CONTACT_INFO.phone}</a>
+                <a href={telHref(CONTACT_INFO.tollFree)}>Toll Free: {CONTACT_INFO.tollFree}</a>
+              </li>
+              <li>
+                <a href={telHref(CONTACT_INFO.phone)}>{CONTACT_INFO.phone}</a>
               </li>
               <li>
                 <a href={`mailto:${CONTACT_INFO.email}`}>{CONTACT_INFO.email}</a>
               </li>
+              <li>GSTIN: {CONTACT_INFO.gst}</li>
             </ul>
           </div>
         </div>
 
         <div className="footer__bottom">
           <p>&copy; {currentYear} Shree Sai Tempo Services. All rights reserved.</p>
-          <p>Pune, Maharashtra, India</p>
+          <p>Serving Pan-India</p>
         </div>
       </div>
     </footer>

@@ -5,7 +5,7 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './ServiceAreas.css';
 
 export default function ServiceAreas() {
-  const [activeArea, setActiveArea] = useState('Pune');
+  const [activeArea, setActiveArea] = useState('Mumbai');
   const [ref, visible] = useScrollAnimation(0.15);
 
   return (
@@ -14,7 +14,7 @@ export default function ServiceAreas() {
         <SectionHeading
           label="Coverage"
           title="Service Areas"
-          subtitle="Serving Pune & nearby areas with fast, reliable tempo services."
+          subtitle="Pan-India tempo and logistics services across major cities and beyond."
         />
 
         <div
@@ -22,7 +22,7 @@ export default function ServiceAreas() {
           className={`service-areas fade-up ${visible ? 'visible' : ''}`}
         >
           <div className="service-areas__map">
-            <svg viewBox="0 0 100 80" className="service-areas__svg" aria-label="Maharashtra map highlighting Pune region">
+            <svg viewBox="0 0 100 90" className="service-areas__svg" aria-label="India map highlighting service cities">
               <defs>
                 <linearGradient id="mapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop offset="0%" stopColor="#0B5ED7" stopOpacity="0.15" />
@@ -30,13 +30,13 @@ export default function ServiceAreas() {
                 </linearGradient>
               </defs>
               <path
-                d="M15,10 L85,8 L92,25 L88,45 L75,60 L55,72 L30,68 L12,50 L8,30 Z"
+                d="M35,8 L48,6 L58,12 L70,18 L78,28 L82,40 L78,48 L72,52 L68,58 L62,70 L55,82 L48,86 L42,80 L38,72 L32,78 L28,70 L30,58 L24,52 L18,48 L16,38 L20,28 L28,18 Z"
                 fill="url(#mapGrad)"
                 stroke="#0B5ED7"
                 strokeWidth="0.5"
                 strokeOpacity="0.3"
               />
-              <ellipse cx="42" cy="52" rx="18" ry="14" fill="#0B5ED7" fillOpacity="0.12" stroke="#0B5ED7" strokeWidth="0.8" strokeDasharray="2,1" />
+              <ellipse cx="45" cy="48" rx="28" ry="32" fill="#0B5ED7" fillOpacity="0.08" stroke="#0B5ED7" strokeWidth="0.6" strokeDasharray="2,1" />
               {SERVICE_AREAS.map((area) => (
                 <g key={area.name}>
                   <circle
@@ -59,11 +59,11 @@ export default function ServiceAreas() {
                 </g>
               ))}
             </svg>
-            <p className="service-areas__tagline">Serving Pune &amp; Nearby Areas</p>
+            <p className="service-areas__tagline">Serving Pan-India</p>
           </div>
 
           <div className="service-areas__list">
-            <h3>Areas We Cover</h3>
+            <h3>Cities We Cover</h3>
             <ul>
               {SERVICE_AREAS.map((area) => (
                 <li key={area.name}>

@@ -36,7 +36,7 @@ export default function Testimonials() {
         <SectionHeading
           label="Testimonials"
           title="What Our Customers Say"
-          subtitle="Real reviews from satisfied customers across Pune."
+          subtitle="Real reviews from satisfied customers across India."
         />
 
         <div

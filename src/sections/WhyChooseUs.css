@@ -15,7 +15,7 @@
 .why-us__visual img {
   width: 100%;
   aspect-ratio: 7/5.5;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .why-us__overlay {

@@ -1,4 +1,4 @@
-import { TRUST_BADGES } from '../data/content';
+import { TRUST_BADGES, CONTACT_INFO, telHref } from '../data/content';
 import { IMAGES } from '../data/images';
 import Button from '../components/Button';
 import SafeImage from '../components/SafeImage';
@@ -26,20 +26,20 @@ export default function Hero() {
           className={`hero__content fade-up ${visible ? 'visible' : ''}`}
         >
           <div className="hero__text">
-            <span className="hero__badge">Pune&apos;s Trusted Transport Partner</span>
+            <span className="hero__badge">India&apos;s Trusted Transport Partner</span>
             <h1 className="hero__title">
-              Fast &amp; Reliable Tempo Services in <span>Pune</span>
+              Fast &amp; Reliable Tempo Services <span>Pan-India</span>
             </h1>
             <p className="hero__subtitle">
               We provide trusted local and commercial transportation solutions with on-time pickup,
-              safe delivery, and affordable pricing across Pune and nearby areas.
+              safe delivery, and affordable pricing across India — every city, every load size.
             </p>
             <div className="hero__actions">
               <Button href="#contact" variant="orange">
                 Book Now
               </Button>
-              <Button href="tel:+919876543210" variant="secondary">
-                Call Now
+              <Button href={telHref(CONTACT_INFO.tollFree)} variant="secondary">
+                Call Toll Free
               </Button>
             </div>
             <ul className="hero__trust">
@@ -57,7 +57,7 @@ export default function Hero() {
               <SafeImage
                 src={IMAGES.hero}
                 fallback={IMAGES.fallback}
-                alt="Tata Ace tempo truck for goods transportation in Pune, India"
+                alt="Tempo truck for goods transportation across India"
                 className="hero__image"
               />
               <div className="hero__road">
@@ -76,8 +76,8 @@ export default function Hero() {
             ))}
 
             <div className="hero__stat-card">
-              <strong>5000+</strong>
-              <span>Deliveries Done</span>
+              <strong>5+</strong>
+              <span>Years of Service</span>
             </div>
           </div>
         </div>

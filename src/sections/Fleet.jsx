@@ -15,7 +15,7 @@ export default function Fleet() {
         <SectionHeading
           label="Our Fleet"
           title="Vehicles for Every Need"
-          subtitle="Choose from our diverse fleet of well-maintained tempos and trucks for any transport requirement."
+          subtitle="From autos and mini tempos to heavy trailers — vehicles for every load size, anywhere in India."
         />
 
         <div

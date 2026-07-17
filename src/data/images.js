@@ -2,11 +2,12 @@ import { assetUrl } from '../utils/assetUrl';
 
 export const IMAGES = {
   logo: assetUrl('logo.png'),
-  hero: assetUrl('images/hero-tempo.jpg'),
-  about: assetUrl('images/about-truck.jpg'),
-  whyUs: assetUrl('images/why-us-tempo.jpg'),
+  hero: assetUrl('images/tempo.webp'),
+  about: assetUrl('images/tempo.webp'),
+  whyUs: assetUrl('images/tempo2.webp'),
   puneSkyline: assetUrl('images/hero-tempo.jpg'),
   fleet: {
+    auto: assetUrl('images/fleet-auto.jpg'),
     miniTempo: assetUrl('images/fleet-tata-ace.jpg'),
     pickup: assetUrl('images/fleet-bolero.jpg'),
     tataAce: assetUrl('images/fleet-tata-ace.jpg'),

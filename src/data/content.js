@@ -13,24 +13,31 @@ export const NAV_LINKS = [
 ];
 
 export const TRUST_BADGES = [
+  'Pan-India Coverage',
   'Same Day Delivery',
-  'Professional Drivers',
-  'Affordable Pricing',
+  'All Vehicle Types',
   '24×7 Support',
 ];
 
 export const STATS = [
+  { value: 5, suffix: '+', label: 'Years of Service' },
   { value: 5000, suffix: '+', label: 'Deliveries Completed' },
   { value: 1500, suffix: '+', label: 'Happy Customers' },
-  { value: 25, suffix: '+', label: 'Professional Drivers' },
   { value: 24, suffix: '×7', label: 'Customer Support' },
 ];
+
+export const DIRECTOR = {
+  name: 'Rajesh Patil',
+  title: 'Founder & Director',
+  profile:
+    'With 5 years in transportation and logistics, I lead Shree Sai Tempo Services with one goal — safe, affordable, on-time goods movement across India for families and businesses alike.',
+};
 
 export const SERVICES = [
   {
     icon: '🚚',
     title: 'Local Goods Transport',
-    description: 'Quick and reliable transport for local goods across Pune with flexible scheduling and safe handling.',
+    description: 'Quick and reliable transport for local goods across cities in India with flexible scheduling and safe handling.',
   },
   {
     icon: '🏠',
@@ -65,7 +72,7 @@ export const SERVICES = [
   {
     icon: '🚛',
     title: 'Commercial Transport',
-    description: 'Scalable commercial transport solutions for retailers, wholesalers, and business operations.',
+    description: 'Scalable commercial transport solutions for retailers, wholesalers, and business operations across India.',
   },
 ];
 
@@ -90,55 +97,89 @@ export const HOW_IT_WORKS = [
 
 export const FLEET = [
   {
+    name: 'Auto / Three Wheeler',
+    capacity: '300 kg',
+    bestFor: 'Small parcels, last-mile delivery',
+    image: assetUrl('images/Auto-Three-Wheeler.jpeg'),
+  },
+  {
     name: 'Mini Tempo',
     capacity: '500 kg',
     bestFor: 'Small parcels, local deliveries',
-    image: assetUrl('images/fleet-tata-ace.jpg'),
-  },
-  {
-    name: 'Pickup Truck',
-    capacity: '1 Ton',
-    bestFor: 'Furniture, home shifting',
-    image: assetUrl('images/fleet-bolero.jpg'),
-  },
-  {
-    name: 'Tata Ace',
-    capacity: '750 kg',
-    bestFor: 'Commercial goods, parcels',
-    image: assetUrl('images/fleet-tata-ace.jpg'),
+    image: assetUrl('images/Mini-Tempo.jpeg'),
   },
   {
     name: 'Mahindra Jeeto',
     capacity: '600 kg',
     bestFor: 'Urban deliveries, small loads',
-    image: assetUrl('images/why-us-tempo.jpg'),
+    image: assetUrl('images/Mahindra-Jeeto.jpeg'),
   },
   {
-    name: 'Large Tempo',
-    capacity: '2 Ton',
+    name: 'Tata Ace',
+    capacity: '750 kg',
+    bestFor: 'Commercial goods, parcels',
+    image: assetUrl('images/Tata-Ace.jpeg'),
+  },
+  {
+    name: 'Pickup Truck',
+    capacity: '1 Ton',
+    bestFor: 'Furniture, home shifting',
+    image: assetUrl('images/Pickup-Truck.jpeg'),
+  },
+  {
+    name: 'Tata 407 / Large Tempo',
+    capacity: '2.5 Ton',
     bestFor: 'Industrial goods, bulk transport',
-    image: assetUrl('images/fleet-tata-407.jpg'),
+    image: assetUrl('images/Tata-470.jpg'),
+  },
+  {
+    name: '14 ft Truck',
+    capacity: '4 Ton',
+    bestFor: 'Intercity goods, warehouse loads',
+    image: assetUrl('images/14-ft-Truck.jpg'),
+  },
+  {
+    name: '17 ft Truck',
+    capacity: '6 Ton',
+    bestFor: 'Commercial & industrial cargo',
+    image: assetUrl('images/17-ft-Truck.jpg'),
+  },
+  {
+    name: 'Container Truck',
+    capacity: '9 Ton',
+    bestFor: 'Secure long-distance shipments',
+    image: assetUrl('images/Container-Truck.avif'),
+  },
+  {
+    name: 'Heavy Trailer',
+    capacity: '20+ Ton',
+    bestFor: 'Heavy machinery, pan-India freight',
+    image: assetUrl('images/Heavy-Trailer.webp'),
   },
 ];
 
 export const SERVICE_AREAS = [
-  { name: 'Pune', x: 42, y: 58 },
-  { name: 'Pimpri-Chinchwad', x: 38, y: 48 },
-  { name: 'Hinjewadi', x: 28, y: 52 },
-  { name: 'Wakad', x: 32, y: 50 },
-  { name: 'Baner', x: 35, y: 54 },
-  { name: 'Kharadi', x: 52, y: 52 },
-  { name: 'Hadapsar', x: 50, y: 62 },
-  { name: 'Nigdi', x: 36, y: 44 },
-  { name: 'Aundh', x: 40, y: 52 },
-  { name: 'Kothrud', x: 38, y: 58 },
-  { name: 'Shivajinagar', x: 44, y: 54 },
-  { name: 'Chakan', x: 30, y: 38 },
+  { name: 'Mumbai', x: 28, y: 52 },
+  { name: 'Pune', x: 32, y: 56 },
+  { name: 'Delhi NCR', x: 42, y: 22 },
+  { name: 'Bengaluru', x: 42, y: 68 },
+  { name: 'Hyderabad', x: 48, y: 58 },
+  { name: 'Chennai', x: 52, y: 72 },
+  { name: 'Kolkata', x: 72, y: 42 },
+  { name: 'Ahmedabad', x: 26, y: 42 },
+  { name: 'Jaipur', x: 34, y: 30 },
+  { name: 'Lucknow', x: 52, y: 28 },
+  { name: 'Chandigarh', x: 40, y: 18 },
+  { name: 'Indore', x: 38, y: 44 },
+  { name: 'Nagpur', x: 48, y: 48 },
+  { name: 'Surat', x: 28, y: 48 },
+  { name: 'Kochi', x: 38, y: 78 },
+  { name: 'Bhopal', x: 42, y: 40 },
 ];
 
 export const TESTIMONIALS = [
   {
-    name: 'Rajesh Patil',
+    name: 'Vikram Mehta',
     rating: 5,
     review: 'Excellent service! They shifted my entire office in one day without any damage. Professional team and very affordable rates.',
   },
@@ -150,7 +191,7 @@ export const TESTIMONIALS = [
   {
     name: 'Amit Kulkarni',
     rating: 5,
-    review: 'Best tempo service in Pune. Same-day delivery for our warehouse goods. GPS tracking gave us peace of mind throughout the journey.',
+    review: 'Best tempo service for pan-India transport. Same-day local delivery and reliable intercity options. GPS tracking gave us peace of mind throughout.',
   },
   {
     name: 'Sneha Joshi',
@@ -162,11 +203,19 @@ export const TESTIMONIALS = [
 export const FAQ_ITEMS = [
   {
     question: 'How do I book a tempo?',
-    answer: 'You can book online through our contact form, call us directly, or message us on WhatsApp. Share pickup and drop locations, and we will confirm your booking within minutes.',
+    answer: 'You can book online through our contact form, call our toll-free number, or message us on WhatsApp. Share pickup and drop locations, and we will confirm your booking within minutes.',
   },
   {
     question: 'Do you provide same-day delivery?',
-    answer: 'Yes! We offer same-day delivery across Pune and nearby areas. Book before noon for guaranteed same-day pickup and delivery.',
+    answer: 'Yes! We offer same-day delivery in major cities across India. Book before noon for guaranteed same-day pickup and delivery in your local area.',
+  },
+  {
+    question: 'Do you operate pan-India?',
+    answer: 'Yes. Shree Sai Tempo Services provides local and intercity transportation across India — from metros like Mumbai, Delhi, Bengaluru, and Hyderabad to other cities and towns nationwide.',
+  },
+  {
+    question: 'What types of vehicles do you offer?',
+    answer: 'We offer a full fleet — autos, mini tempos, Tata Ace, pickups, Tata 407, 14 ft and 17 ft trucks, container trucks, and heavy trailers — so you can choose the right vehicle for any load size.',
   },
   {
     question: 'What are your service charges?',
@@ -182,14 +231,21 @@ export const FAQ_ITEMS = [
   },
   {
     question: 'Is driver support available 24×7?',
-    answer: 'Our customer support team is available 24×7. You can reach us anytime for booking, tracking, or any assistance during your delivery.',
+    answer: 'Our customer support team is available 24×7. You can reach us anytime via our toll-free number for booking, tracking, or any assistance during your delivery.',
   },
 ];
 
 export const CONTACT_INFO = {
   address: 'Shree Sai Tempo Services, Near Shivaji Nagar, Pune, Maharashtra 411005, India',
   phone: '+91 98765 43210',
+  tollFree: '1800 890 1234',
+  gst: '27AABCS1234A1Z5',
   email: 'info@shreesaitempo.com',
   whatsapp: '919876543210',
   hours: 'Monday – Sunday: 24×7 Available',
 };
+
+/** Digits-only for tel: links */
+export function telHref(number) {
+  return `tel:${String(number).replace(/[^\d+]/g, '')}`;
+}

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CONTACT_INFO } from '../data/content';
+import { CONTACT_INFO, DIRECTOR, telHref } from '../data/content';
 import SectionHeading from '../components/SectionHeading';
 import Button from '../components/Button';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
@@ -33,7 +33,7 @@ export default function Contact() {
         <SectionHeading
           label="Contact"
           title="Get In Touch"
-          subtitle="Book your tempo or ask us anything — we're here 24×7."
+          subtitle="Book your vehicle or ask us anything — we're here 24×7 across India."
         />
 
         <div
@@ -41,54 +41,65 @@ export default function Contact() {
           className={`contact fade-up ${visible ? 'visible' : ''}`}
         >
           <form className="contact__form" onSubmit={handleSubmit}>
-            <div className="contact__field">
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                placeholder="Your full name"
-              />
+            <div className="contact__form-head">
+              <h3>Book a Vehicle</h3>
+              <p>Share pickup &amp; drop details — we&apos;ll confirm quickly.</p>
             </div>
-            <div className="contact__field">
-              <label htmlFor="phone">Phone</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-                placeholder="+91 98765 43210"
-              />
+
+            <div className="contact__row">
+              <div className="contact__field">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your full name"
+                />
+              </div>
+              <div className="contact__field">
+                <label htmlFor="phone">Phone</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  placeholder="+91 98765 43210"
+                />
+              </div>
             </div>
-            <div className="contact__field">
-              <label htmlFor="pickup">Pickup Location</label>
-              <input
-                type="text"
-                id="pickup"
-                name="pickup"
-                value={formData.pickup}
-                onChange={handleChange}
-                required
-                placeholder="Enter pickup address"
-              />
+
+            <div className="contact__row">
+              <div className="contact__field">
+                <label htmlFor="pickup">Pickup Location</label>
+                <input
+                  type="text"
+                  id="pickup"
+                  name="pickup"
+                  value={formData.pickup}
+                  onChange={handleChange}
+                  required
+                  placeholder="City / address for pickup"
+                />
+              </div>
+              <div className="contact__field">
+                <label htmlFor="drop">Drop Location</label>
+                <input
+                  type="text"
+                  id="drop"
+                  name="drop"
+                  value={formData.drop}
+                  onChange={handleChange}
+                  required
+                  placeholder="City / address for drop"
+                />
+              </div>
             </div>
-            <div className="contact__field">
-              <label htmlFor="drop">Drop Location</label>
-              <input
-                type="text"
-                id="drop"
-                name="drop"
-                value={formData.drop}
-                onChange={handleChange}
-                required
-                placeholder="Enter drop address"
-              />
-            </div>
+
             <div className="contact__field">
               <label htmlFor="message">Message</label>
               <textarea
@@ -96,16 +107,17 @@ export default function Contact() {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                rows={4}
+                rows={12}
                 placeholder="Any special instructions..."
               />
             </div>
-            <Button href="#contact" variant="orange">
+
+            <Button type="submit" variant="orange" className="contact__submit">
               {submitted ? 'Request Sent ✓' : 'Book Request'}
             </Button>
           </form>
 
-          <div className="contact__info">
+          <div className="contact__aside">
             <div className="contact__map">
               <iframe
                 title="Shree Sai Tempo Services location on Google Maps"
@@ -115,48 +127,62 @@ export default function Contact() {
               />
             </div>
 
-            <div className="contact__details">
-              <div className="contact__detail">
-                <span className="contact__detail-icon">📍</span>
+            <div className="contact__panel">
+              <div className="contact__quick">
+                <a className="contact__quick-item" href={telHref(CONTACT_INFO.tollFree)}>
+                  <span className="contact__quick-label">Toll Free</span>
+                  <strong>{CONTACT_INFO.tollFree}</strong>
+                </a>
+                <a className="contact__quick-item" href={telHref(CONTACT_INFO.phone)}>
+                  <span className="contact__quick-label">Phone</span>
+                  <strong>{CONTACT_INFO.phone}</strong>
+                </a>
+                <a className="contact__quick-item" href={`mailto:${CONTACT_INFO.email}`}>
+                  <span className="contact__quick-label">Email</span>
+                  <strong>{CONTACT_INFO.email}</strong>
+                </a>
+                <div className="contact__quick-item contact__quick-item--static">
+                  <span className="contact__quick-label">Hours</span>
+                  <strong>24×7 Available</strong>
+                </div>
+              </div>
+
+              <div className="contact__meta">
                 <div>
-                  <strong>Address</strong>
+                  <span>Head Office</span>
                   <p>{CONTACT_INFO.address}</p>
                 </div>
-              </div>
-              <div className="contact__detail">
-                <span className="contact__detail-icon">📞</span>
-                <div>
-                  <strong>Phone</strong>
-                  <p>
-                    <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`}>
-                      {CONTACT_INFO.phone}
-                    </a>
-                  </p>
+                <div className="contact__meta-row">
+                  <div>
+                    <span>GSTIN</span>
+                    <p>{CONTACT_INFO.gst}</p>
+                  </div>
+                  <div>
+                    <span>Director</span>
+                    <p>
+                      {DIRECTOR.name}
+                      <em>{DIRECTOR.title}</em>
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div className="contact__detail">
-                <span className="contact__detail-icon">✉️</span>
-                <div>
-                  <strong>Email</strong>
-                  <p>
-                    <a href={`mailto:${CONTACT_INFO.email}`}>{CONTACT_INFO.email}</a>
-                  </p>
-                </div>
+
+              <div className="contact__actions">
+                <Button
+                  href={`https://wa.me/${CONTACT_INFO.whatsapp}`}
+                  variant="whatsapp"
+                  className="contact__action-btn"
+                >
+                  WhatsApp Us
+                </Button>
+                <Button
+                  href={telHref(CONTACT_INFO.tollFree)}
+                  variant="secondary"
+                  className="contact__action-btn"
+                >
+                  Call Toll Free
+                </Button>
               </div>
-              <div className="contact__detail">
-                <span className="contact__detail-icon">🕐</span>
-                <div>
-                  <strong>Working Hours</strong>
-                  <p>{CONTACT_INFO.hours}</p>
-                </div>
-              </div>
-              <Button
-                href={`https://wa.me/${CONTACT_INFO.whatsapp}`}
-                variant="whatsapp"
-                className="contact__whatsapp"
-              >
-                WhatsApp Us
-              </Button>
             </div>
           </div>
         </div>
