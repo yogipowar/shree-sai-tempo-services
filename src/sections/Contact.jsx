@@ -121,10 +121,18 @@ export default function Contact() {
             <div className="contact__map">
               <iframe
                 title="Shree Sai Tempo Services location on Google Maps"
-                src="https://maps.google.com/maps?q=Shivaji+Nagar+Pune+Maharashtra&output=embed"
+                src={CONTACT_INFO.mapsEmbed}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
+              <a
+                className="contact__map-link"
+                href={CONTACT_INFO.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open in Google Maps
+              </a>
             </div>
 
             <div className="contact__panel">
@@ -135,7 +143,8 @@ export default function Contact() {
                 </a>
                 <a className="contact__quick-item" href={telHref(CONTACT_INFO.phone)}>
                   <span className="contact__quick-label">Phone</span>
-                  <strong>{CONTACT_INFO.phone}</strong>
+                  <strong>{CONTACT_INFO.phone}</strong> 
+                  <strong>{CONTACT_INFO.phone2}</strong>
                 </a>
                 <a className="contact__quick-item" href={`mailto:${CONTACT_INFO.email}`}>
                   <span className="contact__quick-label">Email</span>

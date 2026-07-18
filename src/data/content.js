@@ -7,8 +7,8 @@ export const NAV_LINKS = [
   { label: 'Fleet', href: '#fleet' },
   { label: 'Why Choose Us', href: '#why-us' },
   { label: 'Service Areas', href: '#service-areas' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'FAQ', href: '#faq' },
+  // { label: 'Testimonials', href: '#testimonials' },
+  // { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -27,7 +27,7 @@ export const STATS = [
 ];
 
 export const DIRECTOR = {
-  name: 'Rajesh Patil',
+  name: 'S G Jamadar',
   title: 'Founder & Director',
   profile:
     'With 5 years in transportation and logistics, I lead Shree Sai Tempo Services with one goal — safe, affordable, on-time goods movement across India for families and businesses alike.',
@@ -236,13 +236,17 @@ export const FAQ_ITEMS = [
 ];
 
 export const CONTACT_INFO = {
-  address: 'Shree Sai Tempo Services, Near Shivaji Nagar, Pune, Maharashtra 411005, India',
-  phone: '+91 98765 43210',
+  address: 'Shree Sai Tempo Services, EIFFEL City, C-3, Flat No. 908, Kharabwadi, Chakan, Pune, Maharashtra 410501, India',
+  phone: '+91 9845643130',
+  phone2: '+91 9561133855',
   tollFree: '1800 890 1234',
   gst: '27AABCS1234A1Z5',
   email: 'info@shreesaitempo.com',
   whatsapp: '919876543210',
   hours: 'Monday – Sunday: 24×7 Available',
+  mapsUrl: 'https://maps.app.goo.gl/6M2Hs2xxkhDJqfPz5',
+  mapsEmbed:
+    'https://www.google.com/maps?q=18.7589499,73.8344093&z=15&output=embed',
 };
 
 /** Digits-only for tel: links */
