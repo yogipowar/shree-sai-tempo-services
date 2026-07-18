@@ -7,8 +7,6 @@ export const NAV_LINKS = [
   { label: 'Fleet', href: '#fleet' },
   { label: 'Why Choose Us', href: '#why-us' },
   { label: 'Service Areas', href: '#service-areas' },
-  // { label: 'Testimonials', href: '#testimonials' },
-  // { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
 ];
 
