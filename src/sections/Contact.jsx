@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CONTACT_INFO, DIRECTOR, telHref } from '../data/content';
+import { CONTACT_INFO, DIRECTORS, telHref } from '../data/content';
 import SectionHeading from '../components/SectionHeading';
 import Button from '../components/Button';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
@@ -166,13 +166,14 @@ export default function Contact() {
                     <span>GSTIN</span>
                     <p>{CONTACT_INFO.gst}</p>
                   </div>
-                  <div>
-                    <span>Director</span>
-                    <p>
-                      {DIRECTOR.name}
-                      <em>{DIRECTOR.title}</em>
-                    </p>
-                  </div>
+                </div>
+                <div className="contact__meta-row">
+                  {DIRECTORS.map((director) => (
+                    <div key={director.name}>
+                      <span>{director.title}</span>
+                      <p>{director.name}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
 

@@ -24,12 +24,23 @@ export const STATS = [
   { value: 24, suffix: '×7', label: 'Customer Support' },
 ];
 
-export const DIRECTOR = {
-  name: 'S G Jamadar',
-  title: 'Founder & Director',
-  profile:
-    'With 5 years in transportation and logistics, I lead Shree Sai Tempo Services with one goal — safe, affordable, on-time goods movement across India for families and businesses alike.',
-};
+export const DIRECTORS = [
+  {
+    name: 'S G Jamadar',
+    title: 'Founder & Director',
+    profile:
+      'With 5 years in transportation and logistics, I lead Shree Sai Tempo Services with one goal — safe, affordable, on-time goods movement across India for families and businesses alike.',
+  },
+  {
+    name: 'Pundlik Mallappa Koli',
+    title: 'Management Director',
+    profile:
+      'As Management Director, I oversee day-to-day operations and customer experience so every booking — from local tempos to heavy freight — runs smoothly, on time, and with complete transparency.',
+  },
+];
+
+/** @deprecated Prefer DIRECTORS — kept for single-director references */
+export const DIRECTOR = DIRECTORS[0];
 
 export const SERVICES = [
   {
@@ -235,12 +246,12 @@ export const FAQ_ITEMS = [
 
 export const CONTACT_INFO = {
   address: 'Shree Sai Tempo Services, EIFFEL City, C-3, Flat No. 908, Kharabwadi, Chakan, Pune, Maharashtra 410501, India',
-  phone: '+91 9845643130',
+  // phone: '+91 9845643130',
   phone2: '+91 9561133855',
-  tollFree: '1800 890 1234',
-  gst: '27AABCS1234A1Z5',
+  tollFree: '+91 9845643130',
+  gst: '27CVVPJ7248B1Z6',
   email: 'info@shreesaitempo.com',
-  whatsapp: '919876543210',
+  whatsapp: '919845643130',
   hours: 'Monday – Sunday: 24×7 Available',
   mapsUrl: 'https://maps.app.goo.gl/6M2Hs2xxkhDJqfPz5',
   mapsEmbed:
@@ -250,4 +261,24 @@ export const CONTACT_INFO = {
 /** Digits-only for tel: links */
 export function telHref(number) {
   return `tel:${String(number).replace(/[^\d+]/g, '')}`;
+}
+
+/** WhatsApp chat link with optional prefilled message */
+export function whatsappHref(message = '') {
+  const base = `https://wa.me/${CONTACT_INFO.whatsapp}`;
+  if (!message) return base;
+  return `${base}?text=${encodeURIComponent(message)}`;
+}
+
+export function fleetBookingMessage(vehicle) {
+  return [
+    'Hello Shree Sai Tempo Services,',
+    '',
+    'I would like to book a vehicle:',
+    `• Vehicle: ${vehicle.name}`,
+    `• Load Capacity: ${vehicle.capacity}`,
+    `• Best For: ${vehicle.bestFor}`,
+    '',
+    'Please share availability and pricing.',
+  ].join('\n');
 }

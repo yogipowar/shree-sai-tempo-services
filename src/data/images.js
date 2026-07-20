@@ -2,8 +2,8 @@ import { assetUrl } from '../utils/assetUrl';
 
 export const IMAGES = {
   logo: assetUrl('logo.png'),
-  hero: assetUrl('images/tempo.webp'),
-  about: assetUrl('images/tempo.webp'),
+  hero: assetUrl('images/hero-img.png'),
+  about: assetUrl('images/hero-img.png'),
   whyUs: assetUrl('images/tempo2.webp'),
   puneSkyline: assetUrl('images/hero-tempo.jpg'),
   fleet: {

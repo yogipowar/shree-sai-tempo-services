@@ -1,4 +1,4 @@
-import { FLEET } from '../data/content';
+import { FLEET, fleetBookingMessage, whatsappHref } from '../data/content';
 import { IMAGES } from '../data/images';
 import SectionHeading from '../components/SectionHeading';
 import Button from '../components/Button';
@@ -48,7 +48,14 @@ export default function Fleet() {
                     <span className="fleet-card__value">{vehicle.bestFor}</span>
                   </div>
                 </div>
-                <Button href="#contact" variant="orange" className="btn--sm fleet-card__btn">
+                <Button
+                  href={whatsappHref(fleetBookingMessage(vehicle))}
+                  variant="orange"
+                  className="btn--sm fleet-card__btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ariaLabel={`Book ${vehicle.name} on WhatsApp`}
+                >
                   Book Now
                 </Button>
               </div>

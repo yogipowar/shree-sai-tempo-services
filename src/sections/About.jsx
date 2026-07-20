@@ -1,6 +1,6 @@
 import SectionHeading from '../components/SectionHeading';
 import SafeImage from '../components/SafeImage';
-import { CONTACT_INFO, DIRECTOR } from '../data/content';
+import { CONTACT_INFO, DIRECTORS } from '../data/content';
 import { IMAGES, getAvatarUrl } from '../data/images';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './About.css';
@@ -75,24 +75,28 @@ export default function About() {
           </div>
         </div>
 
-        <aside
-          className={`about__director fade-up ${visible ? 'visible' : ''}`}
-          aria-label="Director profile"
+        <div
+          className={`about__directors fade-up ${visible ? 'visible' : ''}`}
+          aria-label="Leadership team"
         >
-          <img
-            src={getAvatarUrl(DIRECTOR.name)}
-            alt={DIRECTOR.name}
-            className="about__director-photo"
-            loading="lazy"
-          />
-          <blockquote className="about__director-quote">
-            <p>{DIRECTOR.profile}</p>
-            <footer>
-              <cite>{DIRECTOR.name}</cite>
-              <span>{DIRECTOR.title}</span>
-            </footer>
-          </blockquote>
-        </aside>
+          {DIRECTORS.map((director) => (
+            <aside key={director.name} className="about__director">
+              <img
+                src={getAvatarUrl(director.name)}
+                alt={director.name}
+                className="about__director-photo"
+                loading="lazy"
+              />
+              <blockquote className="about__director-quote">
+                <p>{director.profile}</p>
+                <footer>
+                  <cite>{director.name}</cite>
+                  <span>{director.title}</span>
+                </footer>
+              </blockquote>
+            </aside>
+          ))}
+        </div>
       </div>
     </section>
   );

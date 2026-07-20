@@ -163,6 +163,8 @@
   aspect-ratio: 4/3;
   object-fit: cover;
   animation: heroParallax 8s ease-in-out infinite alternate;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-in-out;
 }
 
 @keyframes heroParallax {
