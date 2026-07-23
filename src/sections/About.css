@@ -170,19 +170,87 @@
   align-items: center;
   margin-top: 0;
   padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  padding-top: clamp(2.75rem, 4vw, 3.5rem);
+  overflow: visible;
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   border-radius: var(--radius-lg);
   color: #fff;
   box-shadow: var(--shadow-md);
 }
 
-.about__director-photo {
-  width: 88px;
-  height: 88px;
+.about__director-photo-wrap {
+  --photo-size: 120px;
+  --pop-out: 0.38;
+  position: relative;
+  width: var(--photo-size);
+  height: var(--photo-size);
+  flex-shrink: 0;
+  /* align-self: end; */
+  z-index: 1;
+}
+
+/* Circle base behind the portrait */
+.about__director-photo-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
   border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.25), transparent 55%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.16), rgba(0, 0, 0, 0.14));
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.3),
+    inset 0 0 0 3px rgba(255, 255, 255, 0.42);
+  z-index: 0;
+}
+
+/* Soft ground shadow */
+.about__director-photo-wrap::after {
+  content: '';
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  bottom: -8px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.28);
+  filter: blur(7px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/*
+  Continuous "lollipop" clip:
+  - rectangle on top (head pops out of circle)
+  - semicircle on bottom (shoulders stay inside circle)
+  No dual masks = no gap through the face.
+*/
+.about__director-photo {
+  --img-h: calc(var(--photo-size) * (1 + var(--pop-out)));
+  --radius: calc(var(--photo-size) / 2);
+  --mid-y: calc(var(--img-h) - var(--radius));
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: var(--photo-size);
+  height: var(--img-h);
+  transform: translateX(-50%);
+  transform-origin: bottom center;
   object-fit: cover;
-  border: 3px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  object-position: center 12%;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  z-index: 2;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), filter 0.35s ease;
+  clip-path: path('M 0 0 H 120 V 105.6 A 60 60 0 0 1 0 105.6 Z');
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.32));
+}
+
+.about__director:hover .about__director-photo {
+  transform: translateX(-50%) scale(1.04);
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.38));
 }
 
 .about__director-quote {
@@ -260,6 +328,18 @@
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
+  }
+
+  .about__director-photo-wrap {
+    align-self: center;
+  }
+
+  .about__director-photo {
+    transform: translateX(-50%);
+  }
+
+  .about__director:hover .about__director-photo {
+    transform: translateX(-50%) scale(1.04);
   }
 
   .about__director-quote::before {

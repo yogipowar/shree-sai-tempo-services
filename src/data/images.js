@@ -14,6 +14,10 @@ export const IMAGES = {
     mahindraJeeto: assetUrl('images/why-us-tempo.jpg'),
     largeTempo: assetUrl('images/fleet-tata-407.jpg'),
   },
+  directors: {
+    jamadar: assetUrl('images/s-g-jamadar.png'),
+    koli: assetUrl('images/p-m-koli.png'),
+  },
   fallback: assetUrl('images/hero-tempo.jpg'),
 };
 

@@ -28,12 +28,14 @@ export const DIRECTORS = [
   {
     name: 'S G Jamadar',
     title: 'Founder & Director',
+    photo: assetUrl('images/s-g-jamadar.png'),
     profile:
       'With 5 years in transportation and logistics, I lead Shree Sai Tempo Services with one goal — safe, affordable, on-time goods movement across India for families and businesses alike.',
   },
   {
     name: 'Pundlik Mallappa Koli',
     title: 'Management Director',
+    photo: assetUrl('images/p-m-koli.png'),
     profile:
       'As Management Director, I oversee day-to-day operations and customer experience so every booking — from local tempos to heavy freight — runs smoothly, on time, and with complete transparency.',
   },

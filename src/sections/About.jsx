@@ -81,12 +81,15 @@ export default function About() {
         >
           {DIRECTORS.map((director) => (
             <aside key={director.name} className="about__director">
-              <img
-                src={getAvatarUrl(director.name)}
-                alt={director.name}
-                className="about__director-photo"
-                loading="lazy"
-              />
+              <div className="about__director-photo-wrap">
+                <SafeImage
+                  src={director.photo}
+                  fallback={getAvatarUrl(director.name)}
+                  alt={director.name}
+                  className="about__director-photo"
+                  loading="lazy"
+                />
+              </div>
               <blockquote className="about__director-quote">
                 <p>{director.profile}</p>
                 <footer>
